@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Login</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">UserName</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in </string>
+    <string name="action_sign_in_read_out">Click here to Sign in </string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="home">Home</string>
+    <string name="update">Update</string>
+    <string name="enter_updated_user_name_here">Enter updated user name here</string>
+    <string name="hide_my_name">Hide my Name</string>
+    <string name="logout">Logout</string>
+    <string name="is_required">%1$s is required.</string>
+    <string name="should_be_between">%3$s should be between %1$s and %2$s.</string>
+    <string name="description">Description</string>
+    <string name="home_fragment_label">HomeFragment</string>
+    <string name="content">content</string>
+    <string name="profile">Profile</string>
+
+    <!-- Sync Preferences -->
+    <string name="select_a_profile_image">Select a Profile Image</string>
+    <string name="update_name">Update Name</string>
+
+    <string name="about">About</string>
+    <string name="about_description">This a sample application.
+    </string>
+    <string name="done">Done</string>
+    <string name="title_about">About</string>
+    <string name="title_home">Home</string>
+    <string name="title_my_profile">Update Profile</string>
+
+    <string name="cd_home">Home</string>
+
+    <string name="my_profile_menu">Profile Done</string>
+    <string name="profile_done">Profile Done</string>
+    <string name="login">Login</string>
+
+    <string name="hint_emp_id">Employee Id…</string>
+    <string name="hint_emp_name">Employee Name…</string>
+    <string name="hint_emp_age">Employee age…</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Employee not saved because it is empty.</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="new_employee">New Employee</string>
+    <string name="employee_fragment">Employee</string>
+    <string name="data_saved">Data Saved successfully</string>
+
+</resources>

@@ -1,0 +1,28 @@
+apply plugin: "jacoco"
+
+jacoco {
+    toolVersion = "0.8.5"
+}
+
+
+task jacocoUnitTestReport(type: JacocoReport, dependsOn: ['testQaDebugUnitTest']) {
+    def coverageSourceDirs = ["src/main/java/com/sec/loginsample/data"]
+    def fileFilter = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+    ]
+    def javaClasses = fileTree(dir: "${project.buildDir}/intermediates/javac/qa1Debug/classes/com/sec/loginsample/data", excludes: fileFilter)
+    def kotlinClasses = fileTree(dir: "${project.buildDir}/tmp/kotlin-classes/qa1Debug/com/sec/loginsample/data", excludes: fileFilter)
+
+    getClassDirectories().from(files([javaClasses, kotlinClasses]))
+    getSourceDirectories().from(files(coverageSourceDirs))
+    getExecutionData().from(fileTree(dir: "${buildDir}", includes: ["jacoco/testQa1DebugUnitTest.exec"]))
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+

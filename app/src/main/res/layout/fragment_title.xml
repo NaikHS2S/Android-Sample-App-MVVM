@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="homeViewModel"
+            type="com.sample.app.android.ui.home.view.model.HomeFragmentModel" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/title_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.sample.app.android.ui.home.view.fragments.home.Title"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/game_title"
+        android:layout_width="368dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorAccent"
+        android:textSize="62sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/user"
+        android:layout_width="368dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/title_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+
+    <ImageView
+        android:id="@+id/title_image"
+        android:layout_width="362dp"
+        android:layout_height="225dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/water"
+        app:layout_constraintBottom_toTopOf="@+id/about_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_title" />
+
+    <Button
+        android:id="@+id/logout"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="@{(v) -> homeViewModel.logout(v)}"
+        android:text="@string/logout"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/title_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/about_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/about"
+        android:onClick="@{(v) -> homeViewModel.navigateToAbout(v)}"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logout"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

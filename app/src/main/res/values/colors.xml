@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="input_layout_box_color">#80595959</color>
+
+    <color name="hint_color">#595959</color>
+    <color name="edit_text_bg_color">#F4F4F5</color>
+    <color name="transparent">#33FFFFFF</color>
+    <color name="colorBackGround">#ffffff</color>
+    <color name="color_primary_dark">#115482</color>
+    <color name="background_color">#E6E6FA</color>
+    <color name="buttonLabel">#FFFFFF</color>
+
+</resources>

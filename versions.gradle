@@ -1,0 +1,107 @@
+ext.deps = [:]
+def versions = [:]
+ext.versions = versions
+
+versions.android_gradle_plugin = '4.1.2'
+versions.kotlin_version = "1.4.31"
+versions.scanner_version = "3.0"
+versions.realm_version = "10.3.1"
+versions.jacoco_version = "0.8.5"
+versions.kotlin_core_version = "1.3.2"
+versions.appcompat_version = "1.2.0"
+versions.constraint_version = "2.0.4"
+versions.material_version = "1.3.0"
+versions.annotation_version ="1.1.0"
+versions.startup_runtime ="1.0.0"
+versions.navigation_version ="2.3.3"
+versions.work_version ="2.5.0"
+versions.legacy_support = "1.0.0"
+versions.recyclerview = "1.1.0"
+versions.preference = "1.1.1"
+versions.datastore = "1.0.0-alpha07"
+versions.room = "2.2.6"
+versions.coroutine = "1.4.2"
+versions.lifecycle = "2.3.0"
+versions.mockito = "3.5.9"
+versions.espresso = "3.3.0"
+versions.junit_test = "4.13.1"
+versions.ext_junit = "1.1.2"
+
+def build_versions = [:]
+build_versions.min_sdk = 23
+build_versions.compile_sdk = 30
+build_versions.target_sdk = 30
+build_versions.build_tools = "30.0.2"
+ext.build_versions = build_versions
+
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.kotlin_gradle_plugin =  "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin_version"
+deps.sonarqube_plugin =  "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$versions.scanner_version"
+deps.jacoco_plugin =  "org.jacoco:org.jacoco.core:$versions.jacoco_version"
+deps.realm_plugin =  "io.realm:realm-gradle-plugin:$versions.realm_version"
+
+
+def lifecycle = [:]
+lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+lifecycle.viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.livedata_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+deps.kotlin_stdlib =  "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin_version"
+
+deps.kotlin_core_version =  "androidx.core:core-ktx:$versions.kotlin_core_version"
+deps.appcompat_version =  "androidx.appcompat:appcompat:$versions.appcompat_version"
+deps.constraint_version =  "androidx.constraintlayout:constraintlayout:$versions.constraint_version"
+deps.material_version =  "com.google.android.material:material:$versions.material_version"
+deps.annotation_version =  "androidx.annotation:annotation:$versions.annotation_version"
+deps.startup_runtime =  "androidx.startup:startup-runtime:$versions.startup_runtime"
+
+deps.work_version =  "androidx.work:work-runtime-ktx:$versions.work_version"
+
+def navigation = [:]
+navigation.fragment_ktx =  "androidx.navigation:navigation-fragment-ktx:$versions.navigation_version"
+navigation.navigation_ui_ktx =  "androidx.navigation:navigation-ui-ktx:$versions.navigation_version"
+navigation.dynamic_features =  "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation_version"
+navigation.testing =  "androidx.navigation:navigation-testing:$versions.navigation_version"
+deps.navigation = navigation
+
+
+deps.legacy_support =  "androidx.legacy:legacy-support-v4:$versions.legacy_support"
+deps.recyclerview =  "androidx.recyclerview:recyclerview:$versions.recyclerview"
+deps.preference =  "androidx.preference:preference-ktx:$versions.preference"
+deps.datastore =  "androidx.datastore:datastore-preferences:$versions.datastore"
+
+def room = [:]
+room.room_tx =  "androidx.room:room-ktx:$versions.room"
+room.room_compiler =  "androidx.room:room-compiler:$versions.room"
+room.testing =  "androidx.room:room-testing:$versions.room"
+deps.room = room
+
+// Lifecycle components
+deps.kotlin_core_version =  "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+// Coroutines components
+def coroutines = [:]
+coroutines.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine"
+coroutines.android =  "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+deps.coroutines = coroutines
+
+deps.junit_test = "junit:junit:$versions.junit_test"
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.inline = "org.mockito:mockito-inline:$versions.mockito"
+deps.mockito = mockito
+
+deps.mockito_kotlin = "com.nhaarman:mockito-kotlin-kt1.1:1.6.0"
+
+deps.ext_junit = "androidx.test.ext:junit:$versions.ext_junit"
+deps.espresso_core = "androidx.test.espresso:espresso-core:$versions.espresso"
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+}
+ext.addRepos = this.&addRepos
+
+

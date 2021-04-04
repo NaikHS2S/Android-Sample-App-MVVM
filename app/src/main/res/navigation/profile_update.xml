@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myProfile"
+    app:startDestination="@id/updateProfile"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+            android:id="@+id/updateProfile"
+            android:name="com.sample.app.android.ui.home.view.fragments.profile.MyProfile"
+            android:label="@string/title_my_profile"
+            tools:layout="@layout/fragment_my_profile">
+        <action
+            android:id="@+id/action_profile_to_profileDone"
+            app:destination="@id/profileDone"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profileDone"
+        android:name="com.sample.app.android.ui.home.view.fragments.profile.ProfileDone"
+        android:label="@string/profile_done"
+        tools:layout="@layout/fragment_profile_done"/>
+</navigation>

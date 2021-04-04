@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomInputLayout">
+        <attr name="inputTextColor" format="color" />
+        <attr name="inputText" format="string" />
+        <attr name="hintText" format="string" />
+        <attr name="inputTextSize" format="dimension" />
+        <attr name="inputTextHint" format="string" />
+        <attr name="errorTextVisible" format="boolean" />
+        <attr name="errorTextColor" format="color" />
+        <attr name="errorText" format="string" />
+        <attr name="errorTextSize" format="dimension" />
+        <attr name="inputTextFontPath" format="reference" />
+        <attr name="errorTextFontPath" format="reference" />
+        <attr name="editTextType" format="enum">
+            <enum name="Text" value="0" />
+            <enum name="Number" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/employeeList"
+    app:startDestination="@id/employeeFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.sample.app.android.ui.home.view.fragments.employee.EmployeeFragment"
+        android:label="@string/employee_fragment"
+        tools:layout="@layout/fragment_employee">
+        <action
+            android:id="@+id/action_EmployeeFragment_to_newHiresFragment"
+            app:destination="@id/newHiresFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.xyz.com/employee/{employeeToAdd}"
+            android:autoVerify="true"/>
+        <argument
+            android:name="employeeToAdd"
+            app:argType="string"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/newHiresFragment"
+        android:name="com.sample.app.android.ui.home.view.fragments.employee.NewHiresFragment"
+        android:label="@string/new_employee"
+        tools:layout="@layout/fragment_new_employee"/>
+</navigation>

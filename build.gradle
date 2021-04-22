@@ -1,26 +1,61 @@
 buildscript {
 
-    dependencies {
-        apply from: 'versions.gradle'
-        addRepos(repositories)
-        classpath deps.android_gradle_plugin
-        classpath deps.android_gradle_plugin
-        classpath deps.kotlin_gradle_plugin
-        classpath deps.sonarqube_plugin
-        classpath deps.jacoco_plugin
-        classpath deps.realm_plugin
+    ext {
+        android_gradle_plugin = '4.1.3'
+        kotlin_version = "1.4.32"
+        scanner_version = "3.0"
+        realm_version = "10.3.1"
+        jacoco_version = "0.8.5"
+        kotlin_core_version = "1.3.2"
+        appcompat_version = "1.2.0"
+        constraint_version = "2.0.4"
+        material_version = "1.3.0"
+        annotation_version = "1.2.0"
+        startup_runtime = "1.0.0"
+        navigation_version = "2.3.5"
+        work_version = "2.5.0"
+        legacy_support = "1.0.0"
+        recyclerview = "1.2.0"
+        preference = "1.1.1"
+        datastore = "1.0.0-beta01"
+        room = "2.2.6"
+        coroutine = "1.4.2"
+        lifecycle = "2.3.1"
+        mockito = "3.5.9"
+        espresso = "3.3.0"
+        junit_test = "4.13.2"
+        ext_junit = "1.1.2"
+        hilt_android = "2.33-beta"
     }
 
     repositories {
         google()
         jcenter()
     }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$android_gradle_plugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath  "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$scanner_version"
+        classpath "org.jacoco:org.jacoco.core:$jacoco_version"
+        classpath "io.realm:realm-gradle-plugin:$realm_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_android"
+    }
 }
 
 allprojects {
-    addRepos(repositories)
+    repositories {
+        google()
+        jcenter()
+
+    }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+repositories {
+    mavenCentral()
 }

@@ -34,10 +34,7 @@ jobs:
             - run:
                 command: |
                   mkdir -p /apk_files
-                  cp apk.* /apk_files
-            - store_artifacts:
-                path: /tmp/core_dumps
-
+                  cp *.apk /apk_files
             - store_artifacts:
                 path: ~/apk_files
 

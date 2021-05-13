@@ -30,7 +30,9 @@ jobs:
       - run:
           name: Assemble release build
           command: |
-            ./gradlew assembleRelease    
+            ./gradlew assembleRelease
+            - store_artifacts:
+                path: ~/apk_files
 
 workflows:
   # Below is the definition of your workflow.

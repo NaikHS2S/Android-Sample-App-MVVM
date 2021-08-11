@@ -16,7 +16,8 @@
         <activity
             android:name="com.sample.app.android.ui.login.view.LoginActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,19 +25,23 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.sample.app.android.ui.home.view.HomeActivity" android:windowSoftInputMode="adjustPan">
+        <activity android:name="com.sample.app.android.ui.home.view.HomeActivity"
+            android:windowSoftInputMode="adjustPan" android:exported="false"
+            >
             <nav-graph android:value="@navigation/employee_fragments_graph" />
         </activity>
 
         <service
             android:name="com.sample.app.android.scheduler.LogoutService"
+            android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
-            android:exported="false"
-            tools:node="merge">
+            
+            tools:node="merge"
+            android:exported="false">
             <meta-data
                 android:name="com.sample.app.android.initializer.DataStorePreferenceInitializer"
                 android:value="androidx.startup" />
@@ -45,8 +50,9 @@
         <provider
             android:name="com.sample.app.android.initializer.WorkInstanceInitializer"
             android:authorities="${applicationId}.workmanager-init"
-            android:exported="false"
-            tools:node="merge" />
+            
+            tools:node="merge"
+            android:exported="false" />
 
     </application>
 

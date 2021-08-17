@@ -1,8 +1,6 @@
 buildscript {
 
     ext {
-        android_gradle_plugin = '7.0.0'
-        kotlin_version = "1.5.30-RC"
         scanner_version = "3.0"
         realm_version = "10.7.1"
         jacoco_version = "0.8.5"
@@ -34,8 +32,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$android_gradle_plugin"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.android.tools.build:gradle:7.0.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30-RC"
         classpath  "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$scanner_version"
         classpath "org.jacoco:org.jacoco.core:$jacoco_version"
         classpath "io.realm:realm-gradle-plugin:$realm_version"
@@ -50,18 +48,14 @@ allprojects {
 
     }
 
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xlint:unchecked"
-        }
-    }
+//    gradle.projectsEvaluated {
+//        tasks.withType(JavaCompile) {
+//            options.compilerArgs << "-Xlint:unchecked"
+//        }
+//    }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-
-repositories {
-    mavenCentral()
-}

@@ -1,6 +1,7 @@
 package com.sample.app.android.ui.home.view
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
@@ -19,6 +20,8 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
 
         KeyStoreRSAUtil.createNewKeys(ConstantFile.USER_KEY)
         KeystoreWithAESUtil.initialize(ConstantFile.USER_KEY)

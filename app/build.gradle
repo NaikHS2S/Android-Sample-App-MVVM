@@ -10,12 +10,12 @@ apply from: '../sonar.gradle'
 apply from: '../jacoco.gradle'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
     flavorDimensions "default"
     defaultConfig {
         applicationId "com.sample.app.android"
         minSdkVersion 26
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -24,8 +24,8 @@ android {
     }
 
     buildFeatures{
-        viewBinding = true
-        dataBinding = true
+        viewBinding true
+        dataBinding true
     }
 
     bundle {
@@ -76,7 +76,6 @@ dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
     implementation "androidx.core:core-ktx:$kotlin_core_version"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 

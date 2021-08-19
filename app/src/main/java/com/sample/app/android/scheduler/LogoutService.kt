@@ -5,15 +5,16 @@ import android.app.job.JobService
 import android.content.Intent
 import com.sample.app.android.data.store.PreferenceUtil
 import com.sample.app.android.ui.login.view.LoginActivity
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class LogoutService : JobService() {
 
     override fun onStartJob(params: JobParameters?): Boolean {
         val logoutService = this
-        GlobalScope.launch(Dispatchers.Main) { PreferenceUtil.updatePref(
+        CoroutineScope(Job() +Dispatchers.Default).launch(Dispatchers.Main) { PreferenceUtil.updatePref(
             PreferenceUtil.USERNAME,
             logoutService,
             ""

@@ -6,8 +6,9 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.sample.app.android.data.store.PreferenceUtil
 import com.sample.app.android.ui.login.view.LoginActivity
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class SessionWorker(appContext: Context, workerParams: WorkerParameters):
@@ -16,7 +17,7 @@ class SessionWorker(appContext: Context, workerParams: WorkerParameters):
 
     override fun doWork(): Result {
 
-        GlobalScope.launch(Dispatchers.Main) { PreferenceUtil.updatePref(
+        CoroutineScope(Job() +Dispatchers.Default).launch(Dispatchers.Main) { PreferenceUtil.updatePref(
             PreferenceUtil.USERNAME,
             context,
             ""

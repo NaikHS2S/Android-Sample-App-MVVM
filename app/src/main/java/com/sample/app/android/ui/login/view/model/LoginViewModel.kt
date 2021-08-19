@@ -5,16 +5,14 @@ import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.sample.app.android.R
 import com.sample.app.android.data.LoginRepository
 import com.sample.app.android.data.Result
-import com.sample.app.android.utils.LoginUtil
 import com.sample.app.android.ui.login.model.LoginFormState
 import com.sample.app.android.ui.login.model.LoginResult
 import com.sample.app.android.ui.login.view.LoggedInUserView
 import com.sample.app.android.ui.view.model.BaseObservableViewModel
-import kotlinx.coroutines.launch
+import com.sample.app.android.utils.LoginUtil
 
 class LoginViewModel(private val loginRepository: LoginRepository) : BaseObservableViewModel() {
 

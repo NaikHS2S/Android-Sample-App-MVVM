@@ -10,7 +10,9 @@ import com.sample.app.android.data.store.PreferenceUtil.Companion.DATE_STORE_NAM
 import com.sample.app.android.data.store.PreferenceUtil.Companion.PREF_NAME
 import com.sample.app.android.data.store.PreferenceUtil.Companion.createDataStore
 import com.sample.app.android.data.store.PreferenceUtil.Companion.getValueFlow
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -23,7 +25,7 @@ class DataStorePreferenceInitializer : Initializer<DataStore<Preferences>> {
             )
         )
 
-        GlobalScope.launch {
+        CoroutineScope(Job() + Dispatchers.Default).launch {
             createDataStore.getValueFlow(PreferenceUtil.USERNAME, "").collect { value ->
                 if (value.isNotEmpty()) {
                  PreferenceUtil.DataStoreObject.name = value

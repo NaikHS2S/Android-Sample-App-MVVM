@@ -3,7 +3,6 @@ package com.sample.app.android.secure
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
-import java.lang.Exception
 import java.nio.charset.StandardCharsets
 import java.security.KeyStore
 import java.security.KeyStoreException

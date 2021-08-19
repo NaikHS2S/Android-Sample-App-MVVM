@@ -19,9 +19,7 @@ import com.sample.app.android.ui.home.view.HomeActivity
 import com.sample.app.android.ui.login.view.model.LoginViewModel
 import com.sample.app.android.ui.view.model.ViewModelFactory
 import com.sample.app.android.work.WorkerObject
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class LoginActivity : AppCompatActivity() {
     private val loginViewModel by lazy {
@@ -62,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
             } else if (loginResult.success != null) {
 
-                GlobalScope.launch(Dispatchers.Main) {
+                CoroutineScope(Job() +Dispatchers.Default).launch(Dispatchers.Main) {
                     PreferenceUtil.updatePref(
                         USERNAME,
                         this@LoginActivity,
